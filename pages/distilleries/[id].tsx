@@ -3,8 +3,6 @@ import { GetServerSideProps } from 'next';
 import Layout from '../../components/Layout';
 import Link from '../../components/Link';
 
-import getCategoryName from 'utils/getCategoryName';
-
 import { useQuery } from '@apollo/client';
 import { initializeApollo } from '../../lib/apolloClient';
 
@@ -39,9 +37,9 @@ const DistilleryPage = ({ id }: Props): JSX.Element => {
           {distiller.region.name}, {distiller.country.name}
         </h2>
       )}
-      <h3>{`${distiller.name}'s ${getCategoryName(
+      {/* <h3>{`${distiller.name}'s ${getCategoryName(
         distiller.country
-      )} lineup:`}</h3>
+      )} lineup:`}</h3> */}
       <ul>
         {distiller.whiskys.map((whisky: any) => (
           <li>

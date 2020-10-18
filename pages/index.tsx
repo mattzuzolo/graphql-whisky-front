@@ -1,14 +1,9 @@
 import Layout from '../components/Layout';
-import PostList, {
-  ALL_POSTS_QUERY,
-  allPostsQueryVars,
-} from '../components/PostList';
 import { initializeApollo } from '../lib/apolloClient';
 
 const HomePage = () => (
   <Layout>
     <h1>Welcome to Home!</h1>
-    {/* <PostList /> */}
   </Layout>
 );
 
