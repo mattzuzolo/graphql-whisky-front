@@ -11,11 +11,12 @@ type Props = {
 const StyledLink = styled.a`
   margin-right: 10px;
   text-decoration: none;
-  color: #fafafa;
+  /* color: #fafafa; */
+  color: black;
 
   &:hover {
     text-decoration: underline;
-    color: #fafafa;
+    /* color: #fafafa; */
   }
 `;
 
