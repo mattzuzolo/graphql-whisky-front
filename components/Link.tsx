@@ -9,14 +9,12 @@ type Props = {
 };
 
 const StyledLink = styled.a`
-  margin-right: 10px;
+  margin-right: 30px;
   text-decoration: none;
-  /* color: #fafafa; */
-  color: black;
+  color: #f16000;
 
   &:hover {
     text-decoration: underline;
-    /* color: #fafafa; */
   }
 `;
 

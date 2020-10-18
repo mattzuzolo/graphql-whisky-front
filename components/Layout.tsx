@@ -8,8 +8,8 @@ type Props = {
 };
 
 const Page = styled.div`
-  margin-left: 12.5vh;
-  margin-right: 12.5vh;
+  margin-left: 17.5vh;
+  margin-right: 17.5vh;
 
   margin-bottom: 5vh;
 `;
