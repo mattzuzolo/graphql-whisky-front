@@ -45,7 +45,7 @@ const Nav = () => {
 const StyledLink = styled.a`
   margin-right: 30px;
   text-decoration: none;
-  color: black;
+  color: white;
   &:hover {
     text-decoration: underline;
   }

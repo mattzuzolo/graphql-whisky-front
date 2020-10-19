@@ -21,8 +21,8 @@ const StyledDiv = styled.div`
     border-color: ${colors.primary};
   }
 
-  margin-bottom: 16px;
   padding: 12px;
+  margin-bottom: 4px;
 `;
 
 const StyledH3 = styled.h3`
@@ -30,6 +30,10 @@ const StyledH3 = styled.h3`
   padding: 0;
   font-size: 22px;
   margin-bottom: 4px;
+`;
+
+const DetailWrapper = styled.div`
+  color: ${colors.grayscale.black};
 `;
 
 const ListItem = ({
@@ -45,16 +49,18 @@ const ListItem = ({
     <Link href={whiskyHref}>
       <StyledDiv>
         <StyledH3>{whiskyName}</StyledH3>
-        <span>
-          {style}{' '}
-          {distillerCountry.toLowerCase() === 'scotland'
-            ? 'Scotch Whisky'
-            : 'Whisky'}
-        </span>
-        <span>
-          {' '}
-          produced in {`${distillerRegion},`} {distillerCountry}
-        </span>
+        <DetailWrapper>
+          <span>
+            {style}{' '}
+            {distillerCountry.toLowerCase() === 'scotland'
+              ? 'Scotch Whisky'
+              : 'Whisky'}
+          </span>
+          <span>
+            {' '}
+            produced in {`${distillerRegion},`} {distillerCountry}
+          </span>
+        </DetailWrapper>
       </StyledDiv>
     </Link>
   );

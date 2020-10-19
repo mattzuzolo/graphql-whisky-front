@@ -10,7 +10,7 @@ type Props = {
   id: string;
 };
 
-const DistilleryPage = ({ id }: Props): JSX.Element => {
+const WhiskyPage = ({ id }: Props): JSX.Element => {
   const { loading, error, data } = useQuery(GET_WHISKY_BY_ID, {
     variables: {
       id,
@@ -49,4 +49,4 @@ export const getServerSideProps: GetServerSideProps = async (
   };
 };
 
-export default DistilleryPage;
+export default WhiskyPage;

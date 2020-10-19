@@ -9,11 +9,7 @@ const H2 = styled.h2`
   color: ${colors.grayscale.gray};
 
   /* Reset base styles on h2 */
-  margin: 0;
-  padding: 0;
-
   margin-top: 4px;
-  margin-bottom: 20px;
 `;
 
 const Description = ({ description }: Props): JSX.Element => {

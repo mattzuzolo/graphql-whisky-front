@@ -1,52 +1,28 @@
 import { GetServerSideProps } from 'next';
-
-import Layout from '../../components/Layout';
-import Link from '../../components/Link';
-
 import { useQuery } from '@apollo/client';
-import { initializeApollo } from '../../lib/apolloClient';
 
+import { initializeApollo } from '../../lib/apolloClient';
 import { GET_DISTILLER_BY_ID } from '../../apolloClient';
+import Layout from '../../components/Layout';
+import DistillerDetail from 'components/Detail/DistillerDetail';
 
 type Props = {
   id: string;
 };
-const DistilleryPage = ({ id }: Props): JSX.Element => {
+const DistillerPage = ({ id }: Props): JSX.Element => {
   const { loading, error, data } = useQuery(GET_DISTILLER_BY_ID, {
     variables: {
       id,
     },
   });
-  console.log('QUERIED DATA:', data);
 
   const { distiller } = data;
 
-  if (loading) {
-    return (
-      <Layout>
-        <span>Loading...</span>
-      </Layout>
-    );
-  }
-
   return (
     <Layout>
-      <h1>Distiller: {distiller.name}</h1>
-      {!loading && (
-        <h2>
-          {distiller.region.name}, {distiller.country.name}
-        </h2>
+      {!loading && distiller && (
+        <DistillerDetail distiller={distiller} whiskys={distiller.whiskys} />
       )}
-      {/* <h3>{`${distiller.name}'s ${getCategoryName(
-        distiller.country
-      )} lineup:`}</h3> */}
-      <ul>
-        {distiller.whiskys.map((whisky: any) => (
-          <li>
-            <Link href={`/whiskies/${whisky.id}`}>{whisky.name}</Link>
-          </li>
-        ))}
-      </ul>
     </Layout>
   );
 };
@@ -65,8 +41,6 @@ export const getServerSideProps: GetServerSideProps = async (
     },
   });
 
-  // console.log('DISTILLER RESULT', RESULT);
-
   return {
     props: {
       initialApolloState: apolloClient.cache.extract(),
@@ -76,4 +50,4 @@ export const getServerSideProps: GetServerSideProps = async (
   };
 };
 
-export default DistilleryPage;
+export default DistillerPage;

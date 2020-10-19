@@ -3,7 +3,7 @@ import Distiller from '_types/Distiller';
 
 import Name from './Name';
 import Description from './Description';
-import MoreWhisky from './MoreWhisky';
+import Recommendations from '../_common/Recommendations';
 import Details from './Details';
 
 type Props = {
@@ -31,7 +31,7 @@ const WhiskyDetail = ({ whisky, distiller }: Props): JSX.Element => {
         distillerRegion={distiller.region?.name}
         regionAlias={distiller.region?.alias}
       />
-      <MoreWhisky
+      <Recommendations
         distillerId={distiller.id}
         distillerName={distiller.name}
         distillerCountry={distiller.country.name}

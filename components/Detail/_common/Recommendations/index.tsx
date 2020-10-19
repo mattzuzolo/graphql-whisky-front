@@ -1,9 +1,3 @@
-import NextLink from 'next/link';
-import { ReactNode } from 'react';
-import styled from 'styled-components';
-import colors from 'styles/colors';
-import Link from 'components/Link';
-
 import Title from './Title';
 import WhiskyRecommendation from './WhiskyRecommendation';
 
@@ -17,7 +11,7 @@ type Props = {
   whiskys: Whisky[];
 };
 
-const MoreWhisky = ({
+const Recommendations = ({
   distillerId,
   distillerName,
   distillerRegion,
@@ -45,4 +39,4 @@ const MoreWhisky = ({
   );
 };
 
-export default MoreWhisky;
+export default Recommendations;
