@@ -22,7 +22,7 @@ const StyledDiv = styled.div`
   }
 
   padding: 12px;
-  margin-bottom: 4px;
+  margin-bottom: 20px;
 `;
 
 const StyledH3 = styled.h3`

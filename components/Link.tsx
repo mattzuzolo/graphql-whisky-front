@@ -9,7 +9,6 @@ type Props = {
 };
 
 const StyledLink = styled.a`
-  margin-right: 30px;
   text-decoration: none;
   color: #f16000;
 
