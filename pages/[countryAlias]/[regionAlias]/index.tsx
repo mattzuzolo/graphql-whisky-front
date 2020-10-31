@@ -25,7 +25,7 @@ const RegionPage = ({ regionAlias }: Props): JSX.Element => {
       <h1>Hello world. This is the region page!</h1>
       <h3>Country from query string: {regionAlias}</h3>
       {!loading && (
-        <h1>{`Country page! You are on database name: ${region.name}`}</h1>
+        <h1>{`REGION page! You are on database name: ${region.name}`}</h1>
       )}
     </Layout>
   );

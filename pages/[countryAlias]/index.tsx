@@ -2,6 +2,7 @@ import { GetServerSideProps } from 'next';
 
 import Layout from '../../components/Layout';
 import Link from '../../components/Link';
+import CountryDetail from 'components/Detail/CountryDetail';
 
 import { useQuery } from '@apollo/client';
 import { initializeApollo } from '../../lib/apolloClient';
@@ -20,8 +21,9 @@ const CountryPage = ({ countryAlias }: Props): JSX.Element => {
   console.log('QUERIED DATA:', data);
 
   const { countryByAlias: country } = data;
+  const { distillers } = country;
 
-  console.log('\n\nQUERY STUFF:', country.distillers);
+  // console.log('\n\nQUERY STUFF:', country.distillers);
 
   // Flatten whiskies from each distiller so we have a simple list
   // Prisma doesn't have a flatten feature
@@ -42,10 +44,14 @@ const CountryPage = ({ countryAlias }: Props): JSX.Element => {
 
   return (
     <Layout>
-      <h1>Hello world. This is the country page!</h1>
-      <h3>Country from query string: {countryAlias}</h3>
-      {!loading && <h1>{`Country page! You are on: ${country.name}`}</h1>}
-      {country.regions.length > 0 && (
+      {!loading && (
+        <CountryDetail
+          country={country}
+          distillers={distillers}
+          whiskys={flattenedWhiskys}
+        />
+      )}
+      {/* {country.regions.length > 0 && (
         <ul>
           {country.regions.map((region: any) => (
             <Link
@@ -56,17 +62,17 @@ const CountryPage = ({ countryAlias }: Props): JSX.Element => {
             </Link>
           ))}
         </ul>
-      )}
+      )} */}
       {/* TODO: refactor this to be more efficient */}
       {/* Maybe just build relationship between countries + regions and whiskies */}
-      <h3>Popular whiskies from {country.name}</h3>
+      {/* <h3>Popular whiskies from {country.name}</h3>
       <ul>
         {flattenedWhiskys.map((whisky: any) => (
           <li>
             <Link href={`/whiskies/${whisky.id}`}>{whisky.name}</Link>
           </li>
         ))}
-      </ul>
+      </ul> */}
     </Layout>
   );
 };

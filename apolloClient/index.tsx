@@ -13,9 +13,18 @@ export const GET_COUNTRY_BY_ALIAS = gql`
         name
       }
       distillers {
+        id
+        name
+        region {
+          name
+        }
         whiskys {
           id
           name
+          blended
+          distiller {
+            name
+          }
         }
       }
     }
