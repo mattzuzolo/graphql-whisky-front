@@ -1,5 +1,5 @@
-import NextLink from 'next/link';
 import { ReactNode } from 'react';
+import NextLink from 'next/link';
 import styled from 'styled-components';
 
 import colors from 'styles/colors';

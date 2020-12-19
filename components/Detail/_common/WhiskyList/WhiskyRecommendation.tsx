@@ -1,6 +1,6 @@
 import Link from 'components/Link';
 import styled from 'styled-components';
-import colors from '../../../../styles/colors';
+import colors from 'styles/colors';
 
 type Props = {
   whiskyHref: string;
@@ -14,11 +14,11 @@ type Props = {
 
 const StyledDiv = styled.div`
   border: 2px solid ${colors.grayscale.lightGray};
-  border-left: 5px solid ${colors.primary};
+  border-left: 5px solid ${colors.brand.primary};
   border-radius: 5px;
 
   &:hover {
-    border-color: ${colors.primary};
+    border-color: ${colors.brand.primary};
   }
 
   padding: 12px;

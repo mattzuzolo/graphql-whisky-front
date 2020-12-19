@@ -1,11 +1,12 @@
 import { ReactNode } from 'react';
 import styled from 'styled-components';
+import colors from 'styles/colors';
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
+  color: ${colors.grayscale.white};
 `;
 
 type Props = {

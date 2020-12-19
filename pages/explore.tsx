@@ -33,7 +33,7 @@ const HomePage = () => {
 export async function getStaticProps() {
   const apolloClient = initializeApollo();
 
-  const RESULT = await apolloClient.query({
+  await apolloClient.query({
     query: GET_COUNTIRES,
   });
 

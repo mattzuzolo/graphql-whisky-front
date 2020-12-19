@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import colors from 'styles/colors';
+
 const StyledButton = styled.button`
   /* Override default button styles */
   padding: 0;
@@ -7,7 +9,7 @@ const StyledButton = styled.button`
   background-color: transparent;
   border: 0;
 
-  color: white;
+  color: ${colors.grayscale.white};
   font-size: 42px;
   margin-left: 16px;
 `;

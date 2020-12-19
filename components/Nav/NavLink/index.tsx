@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import NextLink from 'next/link';
 import { ReactNode } from 'react';
+import colors from 'styles/colors';
 
 const StyledLink = styled.a`
   margin-right: 30px;
   text-decoration: none;
-  color: white;
+  color: ${colors.grayscale.white};
   &:hover {
     text-decoration: underline;
   }

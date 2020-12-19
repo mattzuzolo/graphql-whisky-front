@@ -1,5 +1,5 @@
-import Link from 'components/Link';
 import styled from 'styled-components';
+
 import colors from 'styles/colors';
 import Breakpoints from 'styles/breakpoints';
 

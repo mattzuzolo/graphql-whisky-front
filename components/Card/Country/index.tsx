@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Link from 'components/Link';
 import Breakpoints from 'styles/breakpoints';
+import colors from 'styles/colors';
 
 const imgUrl =
   'https://live.staticflickr.com/65535/47943444598_d9af95da95_b.jpg';
@@ -12,7 +13,7 @@ const StyledImage = styled.img`
 const Label = styled.h3`
   margin: 0;
   padding: 0;
-  color: white;
+  color: ${colors.grayscale.white};
   font-size: 32px;
 
   @media (max-width: ${Breakpoints.laptop}px) {

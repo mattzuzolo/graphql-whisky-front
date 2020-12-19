@@ -1,14 +1,10 @@
+import { useMemo, useState, ChangeEvent } from 'react';
+import styled from 'styled-components';
+
 import Title from './Title';
 import DistillerItem from '../../ListItems/DistillerListItem';
-import { useMemo, useState, ChangeEvent } from 'react';
-
 import Distiller from '_types/Distiller';
-import CountryPage from 'pages/[countryAlias]';
-import styled from 'styled-components';
 import Select from '../Select';
-import Region from '_types/Region';
-import { uniq } from 'lodash';
-
 import SectionHeader from '../SectionHeader';
 
 type Props = {

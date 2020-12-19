@@ -11,7 +11,7 @@ const Header = styled.div`
 
   @media (max-width: ${Breakpoints.tablet - 1}px) {
     flex-direction: column;
-    justify-content: space-space-evenly;
+    justify-content: space-evenly;
   }
 `;
 

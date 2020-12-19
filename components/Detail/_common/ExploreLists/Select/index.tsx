@@ -1,8 +1,5 @@
 import { ChangeEvent } from 'react';
-import Distiller from '_types/Distiller';
-import CountryPage from 'pages/[countryAlias]';
 import styled from 'styled-components';
-import Region from '_types/Country';
 
 type Props = {
   items: string[];

@@ -34,7 +34,7 @@ export const getServerSideProps: GetServerSideProps = async (
   const { id } = context.query;
   const apolloClient = initializeApollo();
 
-  const RESULT = await apolloClient.query({
+  await apolloClient.query({
     query: GET_DISTILLER_BY_ID,
     variables: {
       id,

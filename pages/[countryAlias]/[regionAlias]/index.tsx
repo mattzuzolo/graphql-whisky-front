@@ -63,8 +63,6 @@ export const getServerSideProps: GetServerSideProps = async (
     },
   });
 
-  console.log('REGION RESULT', RESULT);
-
   return {
     props: {
       initialApolloState: apolloClient.cache.extract(),
