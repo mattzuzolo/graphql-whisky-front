@@ -20,15 +20,29 @@ const RegionPage = ({ regionAlias }: Props): JSX.Element => {
   console.log('QUERIED DATA:', data);
 
   const { regionByAlias: region } = data;
+  const { distillers, name: regionName } = region;
   console.log('\n\n REGION:', region);
+
+  // Flatten whiskies from each distiller so we have a simple list
+  // Prisma doesn't have a flatten feature
+  // TODO: move this to server side?
+  const flattenedWhiskys = distillers.reduce((acc: any[], distiller: any) => {
+    console.log('EACH DISTILLER:', distiller);
+    if (distiller.whiskys.length > 0) {
+      console.log('list:', distiller.whiskys);
+      return [...acc, ...distiller.whiskys]; // merge accumulator and each distiller's array of whiskys
+    }
+    return acc;
+  }, []);
 
   return (
     <Layout>
       {!loading && (
         <RegionDetail
           country={region.country}
-          distillers={region.distillers}
-          regionName={region.name}
+          distillers={distillers}
+          regionName={regionName}
+          whiskys={flattenedWhiskys}
         />
       )}
     </Layout>

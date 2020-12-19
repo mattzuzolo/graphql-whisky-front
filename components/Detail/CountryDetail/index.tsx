@@ -5,8 +5,8 @@ import Distiller from '_types/Distiller';
 import Whisky from '_types/Whisky';
 
 import RegionList from './RegionOptions';
-import DistillerList from './DistillerList';
-import WhiskyList from './WhiskyList';
+import DistillerList from '../_common/ExploreLists/DistillerList';
+import WhiskyList from '../_common/ExploreLists/WhiskyList';
 
 type Props = {
   country: Country;

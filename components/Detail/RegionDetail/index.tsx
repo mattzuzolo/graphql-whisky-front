@@ -3,30 +3,31 @@ import Distiller from '_types/Distiller';
 import Whisky from '_types/Whisky';
 import ExplorePageTitle from '../../_common/exploreDetail/ExplorePageTitle';
 
-import DistillerList from '../CountryDetail/DistillerList';
-// import WhiskyList from './WhiskyList';
+import DistillerList from '../_common/ExploreLists/DistillerList';
+import WhiskyList from '../_common/ExploreLists/WhiskyList';
 
 type Props = {
   country: Country;
   distillers: Distiller[];
+  whiskys: Whisky[];
   regionName: string;
 };
 
 const RegionDetail = ({
   distillers,
+  whiskys,
   country,
   regionName,
 }: Props): JSX.Element => {
-  console.log('country!', country);
-  console.log('distillers!', distillers);
-
   return (
     <>
-      <ExplorePageTitle
-        regionName={regionName}
-        countryName={country.shortName || country.name}
+      <ExplorePageTitle regionName={regionName} countryName={country.name} />
+      <DistillerList countryName={regionName} distillers={distillers} />
+      <WhiskyList
+        countryName={regionName}
+        whiskys={whiskys}
+        distillers={distillers}
       />
-      <p>I need to develop more components here</p>
     </>
   );
 };

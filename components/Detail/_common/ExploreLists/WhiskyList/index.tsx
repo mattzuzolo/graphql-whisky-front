@@ -2,7 +2,7 @@ import Title from './Title';
 import { useMemo, useState, ChangeEvent } from 'react';
 
 import Whisky from '_types/Whisky';
-import WhiskyListItem from '../../_common/ListItems/WhiskyListItem';
+import WhiskyListItem from '../../ListItems/WhiskyListItem';
 
 import SectionHeader from '../SectionHeader';
 import Select from '../Select';

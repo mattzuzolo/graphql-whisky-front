@@ -38,7 +38,7 @@ export const GET_REGION_BY_ALIAS = gql`
       name
       country {
         id
-        shortName
+        name
       }
       distillers {
         id
@@ -46,6 +46,10 @@ export const GET_REGION_BY_ALIAS = gql`
         whiskys {
           id
           name
+          distiller {
+            id
+            name
+          }
         }
       }
     }
