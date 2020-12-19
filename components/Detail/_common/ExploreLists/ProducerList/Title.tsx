@@ -15,7 +15,7 @@ const StyledH2 = styled.h2`
 `;
 
 const Title = ({ countryName }: Props): JSX.Element => {
-  return <StyledH2>Distillers located in {countryName}:</StyledH2>;
+  return <StyledH2>Producers located in {countryName}:</StyledH2>;
 };
 
 export default Title;

@@ -1,11 +1,11 @@
-import Distiller from './Distiller';
+import Producer from './Producer';
 
 type Whisky = {
   id: string;
   name: string;
   blended: boolean;
   age?: number;
-  distiller: Distiller;
+  producer: Producer;
 };
 
 export default Whisky;

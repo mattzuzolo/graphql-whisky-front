@@ -2,27 +2,27 @@ import { useMemo, useState, ChangeEvent } from 'react';
 import styled from 'styled-components';
 
 import Title from './Title';
-import DistillerItem from '../../ListItems/DistillerListItem';
-import Distiller from '_types/Distiller';
+import ProducerItem from '../../ListItems/ProducerListItem';
+import Producer from '_types/Producer';
 import Select from '../Select';
 import SectionHeader from '../SectionHeader';
 
 type Props = {
   countryName: string;
-  distillers: Distiller[];
+  producers: Producer[];
 };
 
 const Wrapper = styled.div`
   margin-bottom: 40px;
 `;
 
-const DistillerList = ({ countryName, distillers }: Props): JSX.Element => {
+const ProducerList = ({ countryName, producers }: Props): JSX.Element => {
   const [selectedRegionName, setSelectedRegionName] = useState<string | null>(
     null
   );
-  const regions = distillers.reduce(
-    (acc: string[], currentDistiller: Distiller) => {
-      const { region } = currentDistiller;
+  const regions = producers.reduce(
+    (acc: string[], currentProducer: Producer) => {
+      const { region } = currentProducer;
       if (region && !acc.includes(region.name)) acc.push(region.name);
       return acc;
     },
@@ -35,16 +35,16 @@ const DistillerList = ({ countryName, distillers }: Props): JSX.Element => {
     setSelectedRegionName(value);
   };
 
-  const distillersToDisplay = useMemo(() => {
+  const producersToDisplay = useMemo(() => {
     if (selectedRegionName) {
-      // filtered distillers
-      return distillers.filter(
-        (distiller: Distiller) => distiller?.region?.name === selectedRegionName
+      // filtered producers
+      return producers.filter(
+        (producer: Producer) => producer?.region?.name === selectedRegionName
       );
     }
 
-    // Return all distillers if select option is null
-    return distillers;
+    // Return all producers if select option is null
+    return producers;
   }, [selectedRegionName]);
 
   return (
@@ -58,19 +58,19 @@ const DistillerList = ({ countryName, distillers }: Props): JSX.Element => {
           value={selectedRegionName ? selectedRegionName : ''}
         />
       </SectionHeader>
-      {distillersToDisplay.map((distiller: Distiller) => {
-        const sampleWhisky = distiller.whiskys[0];
-        let label = 'Distiller';
+      {producersToDisplay.map((producer: Producer) => {
+        const sampleWhisky = producer.whiskys[0];
+        let label = 'Producer';
         if (sampleWhisky) {
-          label = !sampleWhisky.blended ? 'Single malt distiller' : 'Distiller';
+          label = !sampleWhisky.blended ? 'Single malt producer' : 'Producer';
         }
         return (
-          <DistillerItem
-            key={distiller.id}
+          <ProducerItem
+            key={producer.id}
             countryName={countryName}
-            distillerHref={`/distilleries/${distiller.id}`}
-            distillerName={distiller.name}
-            distillerRegion={distiller.region}
+            producerHref={`/producers/${producer.id}`}
+            producerName={producer.name}
+            producerRegion={producer.region}
             label={label}
           />
         );
@@ -79,4 +79,4 @@ const DistillerList = ({ countryName, distillers }: Props): JSX.Element => {
   );
 };
 
-export default DistillerList;
+export default ProducerList;

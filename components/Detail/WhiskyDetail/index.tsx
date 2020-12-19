@@ -1,5 +1,5 @@
 import Whisky from '_types/Whisky';
-import Distiller from '_types/Distiller';
+import Producer from '_types/Producer';
 
 import DetailPageTitle from '../../_common/itemDetail/DetailPageTitle';
 import DetailPageSubhead from '../../_common/itemDetail/DetailPageSubhead';
@@ -8,15 +8,15 @@ import DetailTable from './DetailTable';
 
 type Props = {
   whisky: Whisky;
-  distiller: Distiller;
+  producer: Producer;
 };
 
-const WhiskyDetail = ({ whisky, distiller }: Props): JSX.Element => {
-  const origin = distiller.country.name as string;
+const WhiskyDetail = ({ whisky, producer }: Props): JSX.Element => {
+  const origin = producer.country.name as string;
   const style =
     origin.toLowerCase() === 'scotland' ? 'Scotch Whisky' : 'Whiskey';
   const description = `${whisky.blended ? 'Blended' : 'Single Malt'} ${style}`;
-  console.log('ALIAS:', distiller);
+  console.log('ALIAS:', producer);
   return (
     <>
       <DetailPageTitle name={whisky.name} />
@@ -25,19 +25,19 @@ const WhiskyDetail = ({ whisky, distiller }: Props): JSX.Element => {
         blended={whisky.blended}
         age={whisky.age}
         style={style}
-        distillerName={distiller.name}
-        distillerId={distiller.id}
-        distillerCountry={distiller.country.name}
-        countryAlias={distiller.country.alias}
-        distillerRegion={distiller.region?.name}
-        regionAlias={distiller.region?.alias}
+        producerName={producer.name}
+        producerId={producer.id}
+        producerCountry={producer.country.name}
+        countryAlias={producer.country.alias}
+        producerRegion={producer.region?.name}
+        regionAlias={producer.region?.alias}
       />
       <WhiskyList
-        distillerId={distiller.id}
-        distillerName={distiller.name}
-        distillerCountry={distiller.country.name}
-        distillerRegion={distiller.region?.name}
-        whiskys={distiller.whiskys}
+        producerId={producer.id}
+        producerName={producer.name}
+        producerCountry={producer.country.name}
+        producerRegion={producer.region?.name}
+        whiskys={producer.whiskys}
       />
     </>
   );

@@ -6,49 +6,49 @@ import WhiskyListItem from '../../ListItems/WhiskyListItem';
 
 import SectionHeader from '../SectionHeader';
 import Select from '../Select';
-import Distiller from '_types/Distiller';
+import Producer from '_types/Producer';
 import NoResults from './NoResults';
 
 type Props = {
   countryName: string;
   whiskys: Whisky[];
-  distillers: Distiller[];
+  producers: Producer[];
 };
 
 const WhiskyList = ({
   countryName,
   whiskys,
-  distillers,
+  producers,
 }: Props): JSX.Element => {
-  const [selectedDistillerName, setSelectedDistillerName] = useState<
-    string | ''
-  >('');
+  const [selectedProducerName, setSelectedProducerName] = useState<string | ''>(
+    ''
+  );
 
   const onChangeSelect = (event: ChangeEvent<HTMLSelectElement>): void => {
     const value = event.target.value;
-    setSelectedDistillerName(value);
+    setSelectedProducerName(value);
   };
 
   const whiskysToDisplay = useMemo(() => {
-    if (selectedDistillerName) {
-      // return whiskys filtered by distillery
-      return distillers.find(
-        (distiller: Distiller) => distiller.name === selectedDistillerName
+    if (selectedProducerName) {
+      // return whiskys filtered by producery
+      return producers.find(
+        (producer: Producer) => producer.name === selectedProducerName
       )?.whiskys;
     }
 
-    // Return all distillers if select option is null
+    // Return all producers if select option is null
     return whiskys;
-  }, [selectedDistillerName]);
+  }, [selectedProducerName]);
   return (
     <>
       <SectionHeader>
         <Title countryName={countryName} />
         <Select
           onChange={onChangeSelect}
-          items={distillers.map((distiller: Distiller) => distiller.name)}
-          category="distiller"
-          value={selectedDistillerName}
+          items={producers.map((producer: Producer) => producer.name)}
+          category="producer"
+          value={selectedProducerName}
         />
       </SectionHeader>
       {whiskysToDisplay && whiskysToDisplay.length > 0 ? (
@@ -57,8 +57,8 @@ const WhiskyList = ({
             ? 'Blended whisky'
             : 'Single Malt whisky';
           let label: string;
-          if (whisky.distiller?.region) {
-            label = `${whisky.distiller?.region.name} ${style}`;
+          if (whisky.producer?.region) {
+            label = `${whisky.producer?.region.name} ${style}`;
           } else {
             label = style;
           }
@@ -68,12 +68,12 @@ const WhiskyList = ({
               whiskyHref={`/whiskies/${whisky.id}`}
               whiskyName={whisky.name}
               label={label}
-              distillerName={whisky.distiller.name}
+              producerName={whisky.producer.name}
             />
           );
         })
       ) : (
-        <NoResults currentDistiller={selectedDistillerName} />
+        <NoResults currentProducer={selectedProducerName} />
       )}
     </>
   );

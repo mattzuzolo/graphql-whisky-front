@@ -29,27 +29,27 @@ const DetailWrapper = styled.div`
 
 type Props = {
   countryName: string;
-  distillerHref: string;
-  distillerName: string;
-  distillerRegion?: Region;
+  producerHref: string;
+  producerName: string;
+  producerRegion?: Region;
   label: string;
 };
 
-const DistillerItem = ({
+const ProducerItem = ({
   countryName,
-  distillerHref,
-  distillerName,
-  distillerRegion,
+  producerHref,
+  producerName,
+  producerRegion,
   label,
 }: Props): JSX.Element => {
   let fullLabel = `${label} from `;
-  if (distillerRegion?.name) {
-    fullLabel += `the ${distillerRegion.name} region of `;
+  if (producerRegion?.name) {
+    fullLabel += `the ${producerRegion.name} region of `;
   }
   return (
-    <Link href={distillerHref}>
+    <Link href={producerHref}>
       <StyledDiv>
-        <StyledH3>{distillerName}</StyledH3>
+        <StyledH3>{producerName}</StyledH3>
         {fullLabel && (
           <DetailWrapper>{`${fullLabel} ${countryName}`}</DetailWrapper>
         )}
@@ -58,4 +58,4 @@ const DistillerItem = ({
   );
 };
 
-export default DistillerItem;
+export default ProducerItem;

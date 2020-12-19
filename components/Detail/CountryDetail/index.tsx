@@ -1,16 +1,16 @@
 import Title from './Title';
 import Country from '_types/Country';
 import Region from '_types/Region';
-import Distiller from '_types/Distiller';
+import Producer from '_types/Producer';
 import Whisky from '_types/Whisky';
 
 import RegionList from './RegionOptions';
-import DistillerList from '../_common/ExploreLists/DistillerList';
+import ProducerList from '../_common/ExploreLists/ProducerList';
 import WhiskyList from '../_common/ExploreLists/WhiskyList';
 
 type Props = {
   country: Country;
-  distillers: Distiller[];
+  producers: Producer[];
   whiskys: Whisky[];
   regions: Region[];
 };
@@ -18,18 +18,18 @@ type Props = {
 const CountryDetail = ({
   country,
   regions,
-  distillers,
+  producers,
   whiskys,
 }: Props): JSX.Element => {
   return (
     <>
       <Title countryName={country.name} />
       <RegionList countryAlias={country.alias} regions={regions} />
-      <DistillerList countryName={country.name} distillers={distillers} />
+      <ProducerList countryName={country.name} producers={producers} />
       <WhiskyList
         countryName={country.name}
         whiskys={whiskys}
-        distillers={distillers}
+        producers={producers}
       />
     </>
   );

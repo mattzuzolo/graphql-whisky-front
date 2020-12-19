@@ -4,7 +4,7 @@ import colors from 'styles/colors';
 import Breakpoints from 'styles/breakpoints';
 
 type Props = {
-  currentDistiller: string;
+  currentProducer: string;
 };
 
 const Wrapper = styled.div`
@@ -26,10 +26,10 @@ const StyledH3 = styled.h3`
   }
 `;
 
-const Title = ({ currentDistiller }: Props): JSX.Element => {
+const Title = ({ currentProducer }: Props): JSX.Element => {
   return (
     <Wrapper>
-      <StyledH3>No whiskys available from {currentDistiller}</StyledH3>
+      <StyledH3>No whiskys available from {currentProducer}</StyledH3>
     </Wrapper>
   );
 };

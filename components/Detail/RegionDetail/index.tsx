@@ -1,20 +1,20 @@
 import Country from '_types/Country';
-import Distiller from '_types/Distiller';
+import Producer from '_types/Producer';
 import Whisky from '_types/Whisky';
 import ExplorePageTitle from '../../_common/exploreDetail/ExplorePageTitle';
 
-import DistillerList from '../_common/ExploreLists/DistillerList';
+import ProducerList from '../_common/ExploreLists/ProducerList';
 import WhiskyList from '../_common/ExploreLists/WhiskyList';
 
 type Props = {
   country: Country;
-  distillers: Distiller[];
+  producers: Producer[];
   whiskys: Whisky[];
   regionName: string;
 };
 
 const RegionDetail = ({
-  distillers,
+  producers,
   whiskys,
   country,
   regionName,
@@ -22,11 +22,11 @@ const RegionDetail = ({
   return (
     <>
       <ExplorePageTitle regionName={regionName} countryName={country.name} />
-      <DistillerList countryName={regionName} distillers={distillers} />
+      <ProducerList countryName={regionName} producers={producers} />
       <WhiskyList
         countryName={regionName}
         whiskys={whiskys}
-        distillers={distillers}
+        producers={producers}
       />
     </>
   );

@@ -4,24 +4,24 @@ import { useQuery } from '@apollo/client';
 import { initializeApollo } from '../../lib/apolloClient';
 import { GET_DISTILLER_BY_ID } from '../../apolloClient';
 import Layout from '../../components/Layout';
-import DistillerDetail from 'components/Detail/DistillerDetail';
+import ProducerDetail from 'components/Detail/ProducerDetail';
 
 type Props = {
   id: string;
 };
-const DistillerPage = ({ id }: Props): JSX.Element => {
+const ProducerPage = ({ id }: Props): JSX.Element => {
   const { loading, error, data } = useQuery(GET_DISTILLER_BY_ID, {
     variables: {
       id,
     },
   });
 
-  const { distiller } = data;
+  const { producer } = data;
 
   return (
     <Layout>
-      {!loading && distiller && (
-        <DistillerDetail distiller={distiller} whiskys={distiller.whiskys} />
+      {!loading && producer && (
+        <ProducerDetail producer={producer} whiskys={producer.whiskys} />
       )}
     </Layout>
   );
@@ -50,4 +50,4 @@ export const getServerSideProps: GetServerSideProps = async (
   };
 };
 
-export default DistillerPage;
+export default ProducerPage;

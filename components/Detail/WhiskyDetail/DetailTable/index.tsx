@@ -30,24 +30,24 @@ const DataColumn = styled(StyledTD)`
 `;
 
 type Props = {
-  distillerCountry: string;
+  producerCountry: string;
   countryAlias: string;
-  distillerRegion?: string;
+  producerRegion?: string;
   regionAlias?: string;
-  distillerName: string;
-  distillerId: string;
+  producerName: string;
+  producerId: string;
   age?: number;
   blended: boolean;
   style: string;
 };
 
 const Details = ({
-  distillerCountry,
-  distillerRegion,
+  producerCountry,
+  producerRegion,
   age,
-  distillerName,
+  producerName,
   style,
-  distillerId,
+  producerId,
   countryAlias,
   regionAlias,
 }: Props): JSX.Element => {
@@ -59,21 +59,21 @@ const Details = ({
       </tr> */}
       <tbody>
         <tr>
-          <LabelColumn>Distiller</LabelColumn>
+          <LabelColumn>Producer</LabelColumn>
           <DataColumn>
-            <Link href={`/distilleries/${distillerId}`}>{distillerName}</Link>
+            <Link href={`/producers/${producerId}`}>{producerName}</Link>
           </DataColumn>
         </tr>
         <tr>
           <LabelColumn>Age</LabelColumn>
           <DataColumn>{!!age ? `${age} years` : 'No age statement'}</DataColumn>
         </tr>
-        {distillerRegion && (
+        {producerRegion && (
           <tr>
             <LabelColumn>Region</LabelColumn>
             <DataColumn>
               <Link href={`/${countryAlias}/${regionAlias}`}>
-                {distillerRegion}
+                {producerRegion}
               </Link>
             </DataColumn>
           </tr>
@@ -81,7 +81,7 @@ const Details = ({
         <tr>
           <LabelColumn>Country</LabelColumn>
           <DataColumn>
-            <Link href={`/${countryAlias}`}>{distillerCountry}</Link>
+            <Link href={`/${countryAlias}`}>{producerCountry}</Link>
           </DataColumn>
         </tr>
       </tbody>

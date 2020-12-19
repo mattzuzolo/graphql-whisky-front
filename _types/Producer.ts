@@ -2,7 +2,7 @@ import Country from './Country';
 import Region from './Region';
 import Whisky from './Whisky';
 
-type Distiller = {
+type Producer = {
   id: string;
   name: string;
 
@@ -11,4 +11,4 @@ type Distiller = {
   region?: Region;
 };
 
-export default Distiller;
+export default Producer;

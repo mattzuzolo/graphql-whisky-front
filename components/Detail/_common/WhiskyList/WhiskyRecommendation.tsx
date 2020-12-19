@@ -8,8 +8,8 @@ type Props = {
   blended: boolean;
   age?: number;
   style: string;
-  distillerRegion?: string;
-  distillerCountry: string;
+  producerRegion?: string;
+  producerCountry: string;
 };
 
 const StyledDiv = styled.div`
@@ -42,8 +42,8 @@ const ListItem = ({
   blended,
   age,
   style,
-  distillerRegion,
-  distillerCountry,
+  producerRegion,
+  producerCountry,
 }: Props): JSX.Element => {
   return (
     <Link href={whiskyHref}>
@@ -52,13 +52,13 @@ const ListItem = ({
         <DetailWrapper>
           <span>
             {style}{' '}
-            {distillerCountry.toLowerCase() === 'scotland'
+            {producerCountry.toLowerCase() === 'scotland'
               ? 'Scotch Whisky'
               : 'Whisky'}
           </span>
           <span>
             {' '}
-            produced in {`${distillerRegion},`} {distillerCountry}
+            produced in {`${producerRegion},`} {producerCountry}
           </span>
         </DetailWrapper>
       </StyledDiv>

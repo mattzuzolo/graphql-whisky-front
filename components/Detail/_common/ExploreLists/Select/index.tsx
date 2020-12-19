@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 type Props = {
   items: string[];
-  category: 'distiller' | 'region';
+  category: 'producer' | 'region';
   onChange: (event: ChangeEvent<HTMLSelectElement>) => void;
   value: string;
 };
@@ -20,8 +20,8 @@ const Select = ({ items, category, onChange, value }: Props): JSX.Element => {
   return (
     <StyledSelect
       onChange={onChange}
-      name="distiller"
-      id="distiller-select"
+      name="producer"
+      id="producer-select"
       value={value}
     >
       <option value="">--Filter by {category} --</option>

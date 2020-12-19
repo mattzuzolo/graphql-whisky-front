@@ -12,7 +12,7 @@ export const GET_COUNTRY_BY_ALIAS = gql`
         alias
         name
       }
-      distillers {
+      producers {
         id
         name
         region {
@@ -22,7 +22,7 @@ export const GET_COUNTRY_BY_ALIAS = gql`
           id
           name
           blended
-          distiller {
+          producer {
             name
           }
         }
@@ -40,13 +40,13 @@ export const GET_REGION_BY_ALIAS = gql`
         id
         name
       }
-      distillers {
+      producers {
         id
         name
         whiskys {
           id
           name
-          distiller {
+          producer {
             id
             name
           }
@@ -68,8 +68,8 @@ export const GET_COUNTIRES = gql`
 `;
 
 export const GET_DISTILLER_BY_ID = gql`
-  query DistillerById($id: ID!) {
-    distiller(id: $id) {
+  query ProducerById($id: ID!) {
+    producer(id: $id) {
       id
       name
       whiskys {
@@ -95,7 +95,7 @@ export const GET_WHISKY_BY_ID = gql`
       name
       age
       blended
-      distiller {
+      producer {
         id
         name
         region {

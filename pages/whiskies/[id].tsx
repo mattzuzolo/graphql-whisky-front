@@ -20,8 +20,8 @@ const WhiskyPage = ({ id }: Props): JSX.Element => {
 
   return (
     <Layout>
-      {!loading && whisky && whisky.distiller && (
-        <WhiskyDetail whisky={whisky} distiller={whisky.distiller} />
+      {!loading && whisky && whisky.producer && (
+        <WhiskyDetail whisky={whisky} producer={whisky.producer} />
       )}
     </Layout>
   );

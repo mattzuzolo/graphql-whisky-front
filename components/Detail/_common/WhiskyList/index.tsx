@@ -4,25 +4,25 @@ import WhiskyRecommendation from './WhiskyRecommendation';
 import Whisky from '_types/Whisky';
 
 type Props = {
-  distillerId: string;
-  distillerName: string;
-  distillerRegion?: string;
-  distillerCountry: string;
+  producerId: string;
+  producerName: string;
+  producerRegion?: string;
+  producerCountry: string;
   whiskys: Whisky[];
 };
 
 const WhiskyList = ({
-  distillerId,
-  distillerName,
-  distillerRegion,
-  distillerCountry,
+  producerId,
+  producerName,
+  producerRegion,
+  producerCountry,
   whiskys,
 }: Props): JSX.Element => {
   return (
     <>
       <Title
-        distillerHref={`/distilleries/${distillerId}`}
-        distillerName={distillerName}
+        producerHref={`/producers/${producerId}`}
+        producerName={producerName}
       />
       {whiskys.map((whisky: any) => (
         <WhiskyRecommendation
@@ -31,8 +31,8 @@ const WhiskyList = ({
           whiskyName={whisky.name}
           blended={whisky.blended}
           style={whisky.blended ? 'Blended' : 'Single Malt'}
-          distillerRegion={distillerRegion}
-          distillerCountry={distillerCountry}
+          producerRegion={producerRegion}
+          producerCountry={producerCountry}
         />
       ))}
     </>

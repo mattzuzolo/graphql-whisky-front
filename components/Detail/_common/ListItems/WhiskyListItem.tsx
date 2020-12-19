@@ -31,21 +31,21 @@ type Props = {
   label: string;
   whiskyHref: string;
   whiskyName: string;
-  distillerName: string;
+  producerName: string;
 };
 
 const ListItem = ({
   whiskyHref,
   whiskyName,
   label,
-  distillerName,
+  producerName,
 }: Props): JSX.Element => {
   return (
     <Link href={whiskyHref}>
       <StyledDiv>
         <StyledH3>{whiskyName}</StyledH3>
         <DetailWrapper>
-          {label} by {distillerName}
+          {label} by {producerName}
         </DetailWrapper>
       </StyledDiv>
     </Link>
