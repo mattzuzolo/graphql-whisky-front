@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import colors from 'styles/colors';
 
 const StyledH1 = styled.h1`
@@ -7,7 +8,7 @@ const StyledH1 = styled.h1`
 `;
 
 const RegionName = styled.span`
-  color: ${colors.primary};
+  color: ${colors.brand.primary};
 `;
 
 type Props = {

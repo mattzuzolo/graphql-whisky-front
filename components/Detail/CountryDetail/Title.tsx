@@ -7,7 +7,7 @@ const StyledH1 = styled.h1`
 `;
 
 const CountryName = styled.span`
-  color: ${colors.primary};
+  color: ${colors.brand.primary};
 `;
 
 type Props = {

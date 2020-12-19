@@ -7,7 +7,7 @@ import DesktopNav from './DesktopNav';
 const Wrapper = styled.div`
   font-size: 26px;
 
-  border-bottom: 2.5px solid ${colors.primary};
+  border-bottom: 2.5px solid ${colors.brand.primary};
   background: rgb(255, 102, 0);
   background: linear-gradient(
     309deg,

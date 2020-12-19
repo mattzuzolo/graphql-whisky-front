@@ -1,6 +1,7 @@
 import NextLink from 'next/link';
 import { ReactNode } from 'react';
 import styled from 'styled-components';
+
 import colors from 'styles/colors';
 
 type Props = {
@@ -10,7 +11,7 @@ type Props = {
 
 const StyledLink = styled.a`
   text-decoration: none;
-  color: #f16000;
+  color: ${colors.brand.primary};
 
   &:hover {
     text-decoration: underline;

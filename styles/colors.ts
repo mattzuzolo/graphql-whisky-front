@@ -1,5 +1,7 @@
 const colors = {
-  primary: '#ff6700',
+  brand: {
+    primary: '#ff6700',
+  },
   grayscale: {
     // More here: https://www.w3schools.com/colors/colors_shades.asp
     black: '#000',

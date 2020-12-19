@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 
   padding: 16px;
   height: 150px;
-  border: solid 3px ${colors.primary};
+  border: solid 3px ${colors.brand.primary};
   border-radius: 10px;
 `;
 

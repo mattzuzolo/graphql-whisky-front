@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import colors from '../../../../styles/colors';
+import colors from 'styles/colors';
 import Link from 'components/Link';
 
 const StyledTable = styled.table`
@@ -19,7 +19,7 @@ const StyledTD = styled.td`
 `;
 
 const LabelColumn = styled(StyledTD)`
-  border-right: 2.5px solid ${colors.primary};
+  border-right: 2.5px solid ${colors.brand.primary};
   background-color: ${colors.grayscale.backgroundGray};
   color: ${colors.grayscale.gray};
   font-weight: bold;
