@@ -11,7 +11,7 @@ type Props = {
   whiskys: Whisky[];
 };
 
-const Recommendations = ({
+const WhiskyList = ({
   distillerId,
   distillerName,
   distillerRegion,
@@ -39,4 +39,4 @@ const Recommendations = ({
   );
 };
 
-export default Recommendations;
+export default WhiskyList;

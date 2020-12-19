@@ -1,10 +1,10 @@
 import Whisky from '_types/Whisky';
 import Distiller from '_types/Distiller';
 
-import Name from './Name';
-import Description from './Description';
-import Recommendations from '../_common/Recommendations';
-import Details from './Details';
+import DetailPageTitle from '../../_common/itemDetail/DetailPageTitle';
+import DetailPageSubhead from '../../_common/itemDetail/DetailPageSubhead';
+import WhiskyList from '../_common/WhiskyList';
+import DetailTable from './DetailTable';
 
 type Props = {
   whisky: Whisky;
@@ -16,11 +16,12 @@ const WhiskyDetail = ({ whisky, distiller }: Props): JSX.Element => {
   const style =
     origin.toLowerCase() === 'scotland' ? 'Scotch Whisky' : 'Whiskey';
   const description = `${whisky.blended ? 'Blended' : 'Single Malt'} ${style}`;
+  console.log('ALIAS:', distiller);
   return (
     <>
-      <Name name={whisky.name} />
-      <Description description={description} />
-      <Details
+      <DetailPageTitle name={whisky.name} />
+      <DetailPageSubhead description={description} />
+      <DetailTable
         blended={whisky.blended}
         age={whisky.age}
         style={style}
@@ -31,7 +32,7 @@ const WhiskyDetail = ({ whisky, distiller }: Props): JSX.Element => {
         distillerRegion={distiller.region?.name}
         regionAlias={distiller.region?.alias}
       />
-      <Recommendations
+      <WhiskyList
         distillerId={distiller.id}
         distillerName={distiller.name}
         distillerCountry={distiller.country.name}

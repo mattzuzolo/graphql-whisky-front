@@ -4,7 +4,7 @@ import { initializeApollo } from '../lib/apolloClient';
 import { GET_COUNTIRES } from '../apolloClient';
 import { useQuery } from '@apollo/client';
 import CountryCard from 'components/Card/Country';
-import CountryFeed from 'components/_pages/explore/CountryFeed';
+import CountryFeed from '@components/_common/exploreDetail/CountryFeed';
 
 const HomePage = () => {
   const { loading, error, data } = useQuery(GET_COUNTIRES);

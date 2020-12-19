@@ -4,6 +4,8 @@ import Layout from '../../../components/Layout';
 import { useQuery } from '@apollo/client';
 import { initializeApollo } from '../../../lib/apolloClient';
 
+import RegionDetail from 'components/Detail/RegionDetail';
+
 import { GET_REGION_BY_ALIAS } from '../../../apolloClient';
 
 type Props = {
@@ -22,10 +24,12 @@ const RegionPage = ({ regionAlias }: Props): JSX.Element => {
 
   return (
     <Layout>
-      <h1>Hello world. This is the region page!</h1>
-      <h3>Country from query string: {regionAlias}</h3>
       {!loading && (
-        <h1>{`REGION page! You are on database name: ${region.name}`}</h1>
+        <RegionDetail
+          country={region.country}
+          distillers={region.distillers}
+          regionName={region.name}
+        />
       )}
     </Layout>
   );

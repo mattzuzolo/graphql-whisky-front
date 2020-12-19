@@ -35,12 +35,18 @@ export const GET_REGION_BY_ALIAS = gql`
   query RegionByAlias($alias: String!) {
     regionByAlias(alias: $alias) {
       id
-      alias
       name
-      shortName
       country {
         id
+        shortName
+      }
+      distillers {
+        id
         name
+        whiskys {
+          id
+          name
+        }
       }
     }
   }
@@ -90,9 +96,11 @@ export const GET_WHISKY_BY_ID = gql`
         name
         region {
           name
+          alias
         }
         country {
           name
+          alias
         }
         whiskys {
           id

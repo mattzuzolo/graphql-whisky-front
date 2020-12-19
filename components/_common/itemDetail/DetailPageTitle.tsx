@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import colors from '../../../styles/colors';
 
 type Props = {
   name: string;
@@ -9,8 +10,8 @@ const H1 = styled.h1`
   padding: 0;
 `;
 
-const Name = ({ name }: Props): JSX.Element => {
+const PageTitle = ({ name }: Props): JSX.Element => {
   return <H1>{name}</H1>;
 };
 
-export default Name;
+export default PageTitle;

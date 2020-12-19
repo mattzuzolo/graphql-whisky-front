@@ -90,10 +90,3 @@ const Details = ({
 };
 
 export default Details;
-
-{
-  /* <p>
-        ORIGIN: {distiller.region.name}, {distiller.country.name}
-      </p>
-      <p>Age Statement: {whisky?.age > 0 ? whisky.age : 'No age statemetn'}</p> */
-}

@@ -1,9 +1,9 @@
 import Whisky from '_types/Whisky';
 import Distiller from '_types/Distiller';
 
-import Name from './Name';
-import Description from './Description';
-import Recommendations from '../_common/Recommendations';
+import DetailPageTitle from '../../_common/itemDetail/DetailPageTitle';
+import DetailPageSubhead from '../../_common/itemDetail/DetailPageSubhead';
+import WhiskyList from '../_common/WhiskyList';
 
 type Props = {
   distiller: Distiller;
@@ -17,9 +17,9 @@ const DistillerDetail = ({ distiller, whiskys }: Props): JSX.Element => {
 
   return (
     <>
-      <Name name={distiller.name} />
-      <Description description={description} />
-      <Recommendations
+      <DetailPageTitle name={distiller.name} />
+      <DetailPageSubhead description={description} />
+      <WhiskyList
         distillerId={id}
         distillerName={name}
         distillerCountry={country.name}

@@ -16,8 +16,8 @@ const H2 = styled.h2`
   margin-bottom: 20px;
 `;
 
-const Description = ({ description }: Props): JSX.Element => {
+const StyleDescription = ({ description }: Props): JSX.Element => {
   return <H2>{description}</H2>;
 };
 
-export default Description;
+export default StyleDescription;

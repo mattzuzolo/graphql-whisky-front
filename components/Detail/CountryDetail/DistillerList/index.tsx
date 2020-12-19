@@ -1,5 +1,5 @@
 import Title from './Title';
-import DistillerItem from './DistillerItem';
+import DistillerItem from '../../_common/ListItems/DistillerListItem';
 import { useMemo, useState, ChangeEvent } from 'react';
 
 import Distiller from '_types/Distiller';

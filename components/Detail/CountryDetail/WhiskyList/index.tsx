@@ -2,7 +2,7 @@ import Title from './Title';
 import { useMemo, useState, ChangeEvent } from 'react';
 
 import Whisky from '_types/Whisky';
-import WhiskyItem from './WhiskyItem';
+import WhiskyListItem from '../../_common/ListItems/WhiskyListItem';
 
 import SectionHeader from '../SectionHeader';
 import Select from '../Select';
@@ -63,7 +63,7 @@ const WhiskyList = ({
             label = style;
           }
           return (
-            <WhiskyItem
+            <WhiskyListItem
               key={whisky.id}
               whiskyHref={`/whiskies/${whisky.id}`}
               whiskyName={whisky.name}

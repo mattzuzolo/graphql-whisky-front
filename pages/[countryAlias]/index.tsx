@@ -21,7 +21,7 @@ const CountryPage = ({ countryAlias }: Props): JSX.Element => {
   console.log('QUERIED DATA:', data);
 
   const { countryByAlias: country } = data;
-  const { distillers } = country;
+  const { distillers, regions } = country;
 
   // console.log('\n\nQUERY STUFF:', country.distillers);
 
@@ -47,6 +47,7 @@ const CountryPage = ({ countryAlias }: Props): JSX.Element => {
       {!loading && (
         <CountryDetail
           country={country}
+          regions={regions}
           distillers={distillers}
           whiskys={flattenedWhiskys}
         />
