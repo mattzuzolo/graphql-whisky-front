@@ -67,7 +67,7 @@ export const GET_COUNTIRES = gql`
   }
 `;
 
-export const GET_DISTILLER_BY_ID = gql`
+export const GET_PRODUCER_BY_ID = gql`
   query ProducerById($id: ID!) {
     producer(id: $id) {
       id

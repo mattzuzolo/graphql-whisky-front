@@ -27,7 +27,7 @@ const CountryPage = ({ countryAlias }: Props): JSX.Element => {
   // TODO: move this to server side?
   const flattenedWhiskys = country.producers.reduce(
     (acc: any[], producer: any) => {
-      console.log('EACH DISTILLER:', producer);
+      console.log('EACH PRODUCER:', producer);
       if (producer.whiskys.length > 0) {
         console.log('list:', producer.whiskys);
         return [...acc, ...producer.whiskys]; // merge accumulator and each producer's array of whiskys

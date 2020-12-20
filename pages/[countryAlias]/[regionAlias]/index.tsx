@@ -26,7 +26,7 @@ const RegionPage = ({ regionAlias }: Props): JSX.Element => {
   // Prisma doesn't have a flatten feature
   // TODO: move this to server side?
   const flattenedWhiskys = producers.reduce((acc: any[], producer: any) => {
-    console.log('EACH DISTILLER:', producer);
+    console.log('EACH PRODUCER:', producer);
     if (producer.whiskys.length > 0) {
       console.log('list:', producer.whiskys);
       return [...acc, ...producer.whiskys]; // merge accumulator and each producer's array of whiskys

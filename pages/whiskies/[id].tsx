@@ -30,7 +30,7 @@ const WhiskyPage = ({ id }: Props): JSX.Element => {
 export const getServerSideProps: GetServerSideProps = async (
   context: any
 ): Promise<any> => {
-  console.log('DISTILLER QUERY:', context.query);
+  console.log('PRODUCER QUERY:', context.query);
   const { id } = context.query;
   const apolloClient = initializeApollo();
 

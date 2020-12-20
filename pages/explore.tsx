@@ -8,7 +8,7 @@ import CountryFeed from '@components/_common/exploreDetail/CountryFeed';
 
 const HomePage = () => {
   const { loading, error, data } = useQuery(GET_COUNTIRES);
-  console.log('QUERIED DATA:', data);
+  console.log('~~~QUERIED DATA:', data);
 
   const { countries } = data;
 
