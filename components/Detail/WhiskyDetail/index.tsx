@@ -1,5 +1,6 @@
 import Whisky from '_types/Whisky';
 import Producer from '_types/Producer';
+import Style from '_types/Style';
 
 import DetailPageTitle from '../../_common/itemDetail/DetailPageTitle';
 import DetailPageSubhead from '../../_common/itemDetail/DetailPageSubhead';
@@ -12,19 +13,15 @@ type Props = {
 };
 
 const WhiskyDetail = ({ whisky, producer }: Props): JSX.Element => {
-  const origin = producer.country.name as string;
-  const style =
-    origin.toLowerCase() === 'scotland' ? 'Scotch Whisky' : 'Whiskey';
-  const description = `${whisky.blended ? 'Blended' : 'Single Malt'} ${style}`;
   console.log('ALIAS:', producer);
   return (
     <>
       <DetailPageTitle name={whisky.name} />
-      <DetailPageSubhead description={description} />
+      <DetailPageSubhead description={whisky.style.name} />
       <DetailTable
         blended={whisky.blended}
         age={whisky.age}
-        style={style}
+        style={whisky.style.name}
         producerName={producer.name}
         producerId={producer.id}
         producerCountry={producer.country.name}

@@ -17,7 +17,7 @@ const H2 = styled.h2`
 `;
 
 const StyleDescription = ({ description }: Props): JSX.Element => {
-  return <H2>{description}</H2>;
+  return <H2>{description ? description : 'Whisky'}</H2>;
 };
 
 export default StyleDescription;

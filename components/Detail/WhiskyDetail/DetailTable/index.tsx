@@ -53,10 +53,10 @@ const Details = ({
 }: Props): JSX.Element => {
   return (
     <StyledTable>
-      {/* <tr>
+      <tr>
         <LabelColumn>Style</LabelColumn>
         <DataColumn>{style}</DataColumn>
-      </tr> */}
+      </tr>
       <tbody>
         <tr>
           <LabelColumn>Producer</LabelColumn>

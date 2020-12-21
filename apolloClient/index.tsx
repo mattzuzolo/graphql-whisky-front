@@ -95,6 +95,10 @@ export const GET_WHISKY_BY_ID = gql`
       name
       age
       blended
+      style {
+        id
+        name
+      }
       producer {
         id
         name
