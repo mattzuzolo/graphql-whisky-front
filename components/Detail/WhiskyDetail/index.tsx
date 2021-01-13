@@ -1,6 +1,5 @@
 import Whisky from '_types/Whisky';
 import Producer from '_types/Producer';
-import Style from '_types/Style';
 
 import DetailPageTitle from '../../_common/itemDetail/DetailPageTitle';
 import DetailPageSubhead from '../../_common/itemDetail/DetailPageSubhead';

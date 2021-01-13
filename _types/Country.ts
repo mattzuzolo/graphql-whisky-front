@@ -1,4 +1,3 @@
-import Country from './Country';
 import Producer from './Producer';
 
 type Region = {
