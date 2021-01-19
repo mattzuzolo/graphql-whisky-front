@@ -3,11 +3,10 @@ import Link from 'components/Link';
 import Breakpoints from 'styles/breakpoints';
 import colors from 'styles/colors';
 
-const imgUrl =
-  'https://live.staticflickr.com/65535/47943444598_d9af95da95_b.jpg';
-
 const StyledImage = styled.img`
+  height: 100%;
   width: 100%;
+  object-fit: cover;
 `;
 
 const Label = styled.h3`
@@ -27,6 +26,10 @@ const Label = styled.h3`
 `;
 
 const Wrapper = styled.div`
+  height: 300px;
+  width: 400px;
+  margin-bottom: 12px;
+
   /* Add text in top left of div */
   position: relative;
 
@@ -57,17 +60,18 @@ const Wrapper = styled.div`
 type Props = {
   label: string;
   alias: string;
+  img: string;
 };
 
-const CountryCard = ({ label, alias }: Props): JSX.Element => {
+const ExploreCountryCard = ({ label, alias, img }: Props): JSX.Element => {
   return (
     <Wrapper>
       <Link href={alias}>
         <Label>{label}</Label>
-        <StyledImage src={imgUrl}></StyledImage>
+        <StyledImage src={img}></StyledImage>
       </Link>
     </Wrapper>
   );
 };
 
-export default CountryCard;
+export default ExploreCountryCard;

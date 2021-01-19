@@ -1,9 +1,11 @@
 import Layout from '../components/Layout';
 import { initializeApollo } from '../lib/apolloClient';
 
+import LandingPage from '@components/_pages/index/LandingPage';
+
 const HomePage = () => (
   <Layout>
-    <h1>Welcome to Home!</h1>
+    <LandingPage />
   </Layout>
 );
 

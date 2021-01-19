@@ -24,7 +24,9 @@ const CountryDetail = ({
   return (
     <>
       <Title countryName={country.name} />
-      <RegionList countryAlias={country.alias} regions={regions} />
+      {regions.length > 0 && (
+        <RegionList countryAlias={country.alias} regions={regions} />
+      )}
       <ProducerList countryName={country.name} producers={producers} />
       <WhiskyList
         countryName={country.name}

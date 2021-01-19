@@ -26,12 +26,15 @@ const StyledH3 = styled.h3`
   }
 `;
 
-const Title = ({ currentProducer }: Props): JSX.Element => {
+const NoResults = ({ currentProducer }: Props): JSX.Element => {
   return (
     <Wrapper>
-      <StyledH3>No whiskys available from {currentProducer}</StyledH3>
+      <StyledH3>
+        No whiskys available from{' '}
+        {currentProducer ? currentProducer : 'this region'}
+      </StyledH3>
     </Wrapper>
   );
 };
 
-export default Title;
+export default NoResults;

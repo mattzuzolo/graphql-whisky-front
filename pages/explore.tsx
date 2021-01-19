@@ -2,30 +2,24 @@ import Layout from '../components/Layout';
 import { initializeApollo } from '../lib/apolloClient';
 
 import { GET_COUNTIRES } from '../apolloClient';
-import { useQuery } from '@apollo/client';
-import CountryCard from 'components/Card/Country';
+import ExploreCountryCard from '@components/Card/ExploreCountry';
 import CountryFeed from '@components/_common/exploreDetail/CountryFeed';
+import popularCountries, { PopularCountry } from 'assets/popularCountries';
 
 const HomePage = () => {
-  const { loading, error, data } = useQuery(GET_COUNTIRES);
-  console.log('~~~QUERIED DATA:', data);
-
-  const { countries } = data;
-
   return (
     <Layout>
-      <h1>Explore whiskies by country:</h1>
-      {!loading && (
-        <CountryFeed>
-          {countries.map((country: any) => (
-            <CountryCard
-              key={country.id}
-              label={`${country.shortName} 🏴󠁧󠁢󠁳󠁣󠁴󠁿`}
-              alias={country.alias}
-            />
-          ))}
-        </CountryFeed>
-      )}
+      <h1>Explore whiskies by country: </h1>
+      <CountryFeed>
+        {popularCountries.map((country: PopularCountry) => (
+          <ExploreCountryCard
+            key={country.alias}
+            label={`${country.shortName} 󠁧󠁢󠁳󠁣󠁴${country.flagEmojiCode}`}
+            alias={country.alias}
+            img={country.img}
+          />
+        ))}
+      </CountryFeed>
     </Layout>
   );
 };
