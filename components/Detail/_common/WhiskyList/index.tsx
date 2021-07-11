@@ -9,6 +9,7 @@ type Props = {
   producerRegion?: string;
   producerCountry: string;
   whiskys: Whisky[];
+  isProducerPage?: boolean;
 };
 
 const WhiskyList = ({
@@ -17,12 +18,14 @@ const WhiskyList = ({
   producerRegion,
   producerCountry,
   whiskys,
+  isProducerPage = false,
 }: Props): JSX.Element => {
   return (
     <>
       <Title
         producerHref={`/producers/${producerId}`}
         producerName={producerName}
+        isProducerPage={isProducerPage}
       />
       {whiskys.map((whisky: any) => (
         <WhiskyRecommendation

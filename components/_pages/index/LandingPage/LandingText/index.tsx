@@ -31,8 +31,8 @@ const LandingTextWrapper = styled.div`
 
 const LandingText = () => (
   <LandingTextWrapper>
-    <Title>Whisky App</Title>
-    <SubTitle>Track, collect and taste whisky from everywhere</SubTitle>
+    <Title>Whiskey Explorer</Title>
+    <SubTitle>Search whiskey from around the world</SubTitle>
   </LandingTextWrapper>
 );
 

@@ -12,7 +12,8 @@ type Props = {
 };
 
 const WhiskyDetail = ({ whisky, producer }: Props): JSX.Element => {
-  console.log('ALIAS:', producer);
+  // filter out the whisky we are currently viewing so it's no duplicated
+  const whiskiesToDisplay = producer.whiskys.filter((currentWhisky: Whisky) => whisky.id !== currentWhisky.id)
   return (
     <>
       <DetailPageTitle name={whisky.name} />
@@ -33,7 +34,7 @@ const WhiskyDetail = ({ whisky, producer }: Props): JSX.Element => {
         producerName={producer.name}
         producerCountry={producer.country.name}
         producerRegion={producer.region?.name}
-        whiskys={producer.whiskys}
+        whiskys={whiskiesToDisplay}
       />
     </>
   );
