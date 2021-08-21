@@ -1,3 +1,3 @@
 # Whisky-front
 
-### More information coming soon!
+### More information coming soon
