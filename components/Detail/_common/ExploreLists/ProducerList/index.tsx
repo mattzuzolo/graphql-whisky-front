@@ -51,12 +51,6 @@ const ProducerList = ({ countryName, producers }: Props): JSX.Element => {
     <Wrapper>
       <SectionHeader>
         <Title countryName={countryName} />
-        <Select
-          onChange={onChangeSelect}
-          items={regions}
-          category="region"
-          value={selectedRegionName ? selectedRegionName : ''}
-        />
       </SectionHeader>
       {producersToDisplay.map((producer: Producer) => {
         const sampleWhisky = producer.whiskys[0];

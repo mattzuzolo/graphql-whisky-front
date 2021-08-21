@@ -32,6 +32,40 @@ const Wrapper = styled.div`
 
   /* Add text in top left of div */
   position: relative;
+  background-color: ${colors.brand.primary};
+
+  @media (min-width: ${Breakpoints.phone}px) {
+    width: 100%;
+    margin-bottom: 18px;
+  }
+
+  @media (min-width: ${Breakpoints.tablet - 2}px) {
+    width: 46%;
+    margin-bottom: 16px;
+    margin-right: 16px;
+  }
+
+  @media (min-width: ${Breakpoints.laptop}px) {
+    width: 48%;
+    margin-bottom: 16px;
+    margin-right: 16px;
+  }
+
+  @media (min-width: ${Breakpoints.laptop + 300}px) {
+    width: 30%;
+    margin-bottom: 16px;
+    margin-right: 16px;
+  }
+`;
+
+const LinkButton = styled.a`
+  height: 300px;
+  width: 400px;
+  margin-bottom: 12px;
+
+  /* Add text in top left of div */
+  position: relative;
+  background-color: #ff8837;
 
   @media (min-width: ${Breakpoints.phone}px) {
     width: 100%;
@@ -65,12 +99,9 @@ type Props = {
 
 const ExploreCountryCard = ({ label, alias, img }: Props): JSX.Element => {
   return (
-    <Wrapper>
-      <Link href={alias}>
+    <LinkButton href={alias}>
         <Label>{label}</Label>
-        <StyledImage src={img}></StyledImage>
-      </Link>
-    </Wrapper>
+    </LinkButton>
   );
 };
 

@@ -44,9 +44,6 @@ const LandingPage = () => (
       <LandingText />
       <LandingCTA />
     </TextWrapper>
-    <ImageWrapper>
-      <LandingImage />
-    </ImageWrapper>
   </Wrapper>
 );
 

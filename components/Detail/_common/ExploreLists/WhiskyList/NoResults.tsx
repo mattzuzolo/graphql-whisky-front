@@ -30,7 +30,7 @@ const NoResults = ({ currentProducer }: Props): JSX.Element => {
   return (
     <Wrapper>
       <StyledH3>
-        No whiskys available from{' '}
+        Sorry! No whisky data available for{' '}
         {currentProducer ? currentProducer : 'this region'}
       </StyledH3>
     </Wrapper>

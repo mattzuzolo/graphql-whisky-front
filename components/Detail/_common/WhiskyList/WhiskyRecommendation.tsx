@@ -45,6 +45,8 @@ const ListItem = ({
   producerRegion,
   producerCountry,
 }: Props): JSX.Element => {
+  const region = producerRegion ? `${producerRegion},` : null;
+  const producedInLabel = region ? `${region} ${producerCountry}` : producerCountry;
   return (
     <Link href={whiskyHref}>
       <StyledDiv>
@@ -58,7 +60,7 @@ const ListItem = ({
           </span>
           <span>
             {' '}
-            produced in {`${producerRegion},`} {producerCountry}
+            produced in {producedInLabel}
           </span>
         </DetailWrapper>
       </StyledDiv>
